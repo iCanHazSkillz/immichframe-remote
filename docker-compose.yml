@@ -1,0 +1,13 @@
+services:
+  immichframe-remote:
+    build: .
+    container_name: immichframe-remote
+    ports:
+      - "8000:8000"
+    environment:
+      - DISPLAY=${DISPLAY}  # Use host's DISPLAY variable
+      - XAUTHORITY=${XAUTHORITY}
+    volumes:
+      - ${XAUTHORITY}:${XAUTHORITY}:ro  # Map .Xauthority dynamically
+      - /tmp/.X11-unix:/tmp/.X11-unix  # Mount the X11 socket
+    user: "${UID}:${GID}"  # Use host's UID and GID
