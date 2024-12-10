@@ -59,9 +59,9 @@ immichframe-remote/
 ├── docker-compose.yml    # Defines the service configuration
 ├── .env                  # Environment variables for flexibility
 └── scripts/              # Application scripts
-    ├── previous.py       # Script for previous action
-    ├── next.py           # Script for next action
-    └── play-pause.py     # Script for play/pause action
+    ├── previous.py       # Script for previous frame
+    ├── next.py           # Script for next frame
+    └── play-pause.py     # Script for play/pause frame
 ```
 
 ## Troubleshooting
