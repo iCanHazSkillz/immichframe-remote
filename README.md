@@ -21,7 +21,7 @@ Make sure Docker and Docker Compose are installed on your system. For installati
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/immichframe-remote.git
+   git clone https://github.com/iCanHazSkillz/immichframe-remote.git
    cd immichframe-remote
    ```
 2. Environment Variables
