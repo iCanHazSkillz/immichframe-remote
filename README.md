@@ -6,19 +6,7 @@ This repository contains a Dockerized HTTPOut server designed to interact with a
 
 Before proceeding, ensure your environment is set up correctly:
 
-### 1. **Environment Variables**
-Create a `.env` file in the root directory with the following variables:
-
-```dotenv
-DISPLAY=:0  # Adjust based on your system setup
-XAUTHORITY=/path/to/.Xauthority  # Full path to your .Xauthority file
-UID=1000  # User ID of your host user
-GID=1000  # Group ID of your host user
-```
-
-- Replace `/path/to/.Xauthority` with the actual path on your host machine, e.g., `/home/user/.Xauthority`.
-
-### 2. **Ensure `.Xauthority` File is Available**
+### 1. **Ensure `.Xauthority` File is Available**
 Check that the `.Xauthority` file exists on your host system and contains valid X11 authentication credentials:
 
 ```bash
@@ -26,7 +14,7 @@ ls -l /path/to/.Xauthority
 xauth list
 ```
 
-### 3. **Install Docker and Docker Compose**
+### 2. **Install Docker and Docker Compose**
 Make sure Docker and Docker Compose are installed on your system. For installation instructions, visit [Docker’s official documentation](https://docs.docker.com/get-docker/).
 
 ## Build and Run the Container
@@ -36,18 +24,29 @@ Make sure Docker and Docker Compose are installed on your system. For installati
    git clone https://github.com/yourusername/immichframe-remote.git
    cd immichframe-remote
    ```
+2. Environment Variables
+   Open the provided `.env` file with your favorite text editor and ensure the variables match your host system:
 
-2. Build and start the container:
+   ```dotenv
+   DISPLAY=:0  # Adjust based on your system setup
+   XAUTHORITY=/path/to/.Xauthority  # Full path to your .Xauthority file
+   UID=1000  # User ID of your host user
+   GID=1000  # Group ID of your host user
+   ```
+
+- Replace `/path/to/.Xauthority` with the actual path on your host machine, e.g., `/home/user/.Xauthority`.
+
+3. Build and start the container:
    ```bash
    sudo docker compose up --build -d
    ```
 
-3. Verify the container is running:
+4. Verify the container is running:
    ```bash
    sudo docker ps
    ```
 
-4. Test the server:
+5. Test the server:
    ```bash
    curl http://localhost:8000/next.py
    ```
@@ -56,10 +55,13 @@ Make sure Docker and Docker Compose are installed on your system. For installati
 
 ```
 immichframe-remote/
-├── Dockerfile          # Defines the container setup
-├── docker-compose.yml # Defines the service configuration
-├── .env               # Environment variables for flexibility
-└── scripts/          # Application scripts
+├── Dockerfile            # Defines the container setup
+├── docker-compose.yml    # Defines the service configuration
+├── .env                  # Environment variables for flexibility
+└── scripts/              # Application scripts
+    ├── previous.py       # Script for previous action
+    ├── next.py           # Script for next action
+    └── play-pause.py     # Script for play/pause action
 ```
 
 ## Troubleshooting
