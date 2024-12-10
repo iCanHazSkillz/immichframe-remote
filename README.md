@@ -1,6 +1,6 @@
-# ImmichFrame Remote HTTPOut Server
+# ImmichFrame Remote - Control your immich frame web instance with HTTP Get requests
 
-This repository contains a Dockerized HTTPOut server designed to interact with an ImmichFrame setup. The configuration is flexible, allowing users to adjust environment variables to match their system.
+This repository contains a Dockerized HTTPOut server designed to interact with an ImmichFrame Web setup. Provided scripts will allow users to remotely change to the next/previous frame or play/pause the frame.
 
 ## Prerequisites
 
